@@ -52,6 +52,9 @@ class _MyAppState extends State<MyApp> {
       title: 'Multi Language',
       debugShowCheckedModeBanner: false,
       locale: _locale,
+      theme: ThemeData(
+        primaryColor: Colors.green
+      ),
       home: HomeScreen(),
       supportedLocales: [
         Locale('en', ''),

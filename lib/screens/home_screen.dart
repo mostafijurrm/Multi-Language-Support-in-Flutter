@@ -20,6 +20,9 @@ class HomeScreenState extends State<HomeScreen> {
           title: Text(Languages
               .of(context)
               .appName),
+          actions: [
+            _createLanguageDropDown()
+          ],
         ),
         body: Container(
           margin: EdgeInsets.all(30),
@@ -52,7 +55,7 @@ class HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 70,
                 ),
-                _createLanguageDropDown()
+                //_createLanguageDropDown()
               ],
             ),
           ),
@@ -62,9 +65,16 @@ class HomeScreenState extends State<HomeScreen> {
   _createLanguageDropDown() {
     return DropdownButton<LanguageData>(
       iconSize: 30,
-      hint: Text(Languages
-          .of(context)
-          .selectLanguage),
+      underline: Container(),
+      hint: Text(
+          Languages.of(context).selectLanguage,
+        style: TextStyle(
+          color: Colors.white
+        ),
+      ),
+      style: TextStyle(
+        color: Colors.black
+      ),
       onChanged: (LanguageData language) {
         changeLanguage(context, language.languageCode);
       },
